@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Weather Data</h1>
+    <!-- Temperature Data is shown here -->
+    <p>Temperature of the city <%=city%> is <%= data.temperatureC %> deg celsius</p>
+
+    <!-- UserThoughts -->
+    <br>
+    <form action="/postThoughts" method="post">
+        <label for="userThoughts">
+            <h3>Thoughts: </h3> 
+        </label>
+        <br>
+        <textarea name="userThoughts" id="userThoughts" cols="100" rows="30" placeholder="This weather reminds you of?" <% if (!loggedIn) { %>disabled<% } %>></textarea><br>
+        <input type="submit" value="submit" <% if (!loggedIn) { %>disabled<% } %>>
+    </form>
+    <br><br><br><br>
+
+
+<!-- SignUp -->
+    <div>
+        <a href="/su">
+            <input type="button" value="signup">
+        </a>
+    </div>
+<!-- LogIn -->
+    <form action="/li">
+        <input type="submit" value="login">
+    </form>
+<!-- Logout -->
+    <form action="/logout" method="post">
+        <input type="submit" value="Logout">
+    </form>
+
+
+
+
+
+    <form action="/getThoughts" method="get">
+        <input type="submit" value="Get My thoughts">
+    </form>
+
+
+
+
+
+
+</body>
+</html>
